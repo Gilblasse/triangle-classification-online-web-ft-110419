@@ -9,8 +9,16 @@ class Triangle
   
   def kind 
     # All sides equal = :equilateral
-    :equilateral if @side_a == @side_b && @side_a == @side_c
-    if @side_a == @side_b  @side_a == @side_c
+    
+    sides.each_with_object({}) do |v,h| 
+  		h[v] ||= 0 
+  		h[v] += 1
+	  end.values.max
+    
+    
+    
+    
+    
   end
   
 end
