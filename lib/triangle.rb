@@ -7,10 +7,7 @@ class Triangle
   end
   
   def kind 
-    triangle_check = all_sides.any? {|num| num == 0 || num.angle.class == Float}
-    if triangle_check 
-        raise TriangleError
-      else
+    inequality_check
         check_equality = all_sides.each_with_object({}) do |v,h| 
                         		h[v] ||= 0 
                         		h[v] += 1
@@ -23,11 +20,14 @@ class Triangle
             :isosceles
           when 1
             :scalene 
-          else
-            raise TriangleError
         end
     end
-  end
+    
+    def inequality_check
+       triangle_check = all_sides.any? {|num| num == 0 || num.angle.class == Float}
+       
+    end
+end
   
   
   
