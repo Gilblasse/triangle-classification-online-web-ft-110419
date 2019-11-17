@@ -8,7 +8,7 @@ class Triangle
   end
   
   def kind 
-    # All sides equal = Equilateral
+    # All sides equal = equilateral
   end
   
 end
