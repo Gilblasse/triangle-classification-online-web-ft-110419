@@ -10,7 +10,7 @@ class Triangle
   def kind 
     # All sides equal = :equilateral
     :equilateral if @side_a == @side_b && @side_a == @side_c
-    
+    if @side_a == @side_b  @side_a == @side_c
   end
   
 end
