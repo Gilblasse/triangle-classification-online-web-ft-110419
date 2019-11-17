@@ -1,3 +1,4 @@
+require 'pry'
 class Triangle
   attr_accessor :all_sides 
   
@@ -6,21 +7,35 @@ class Triangle
   end
   
   def kind 
-    check_equality = all_sides.each_with_object({}) do |v,h| 
-                    		h[v] ||= 0 
-                    		h[v] += 1
-                  	 end.values.max
-      
-    case check_equality
-      when 3
-        :equilateral
-      when 2
-        :isosceles
-      when 1
-        :scalene 
+    triangle_check = all_sides.any? {|num| num == 0 || num.angle.class == Float}
+    if triangle_check 
+        raise TriangleError
       else
-        "not a Triangle"
+        check_equality = all_sides.each_with_object({}) do |v,h| 
+                        		h[v] ||= 0 
+                        		h[v] += 1
+                      	 end.values.max
+          
+        case check_equality
+          when 3
+            :equilateral
+          when 2
+            :isosceles
+          when 1
+            :scalene 
+          else
+            raise TriangleError
+        end
     end
   end
   
+  
+  
+  class TriangleError < StandardError
+  end
+  
 end
+
+
+
+
