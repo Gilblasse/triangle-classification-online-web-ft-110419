@@ -7,14 +7,10 @@ class Triangle
   
   def kind 
     # All sides equal = :equilateral
-    all_sides.each_with_object({}) do |v,h| 
-  		h[v] ||= 0 
-  		h[v] += 1
-	  end.values.max
-    
-    
-    
-    
+    check_equality = all_sides.each_with_object({}) do |v,h| 
+                    		h[v] ||= 0 
+                    		h[v] += 1
+                  	  end.values.max
     
   end
   
