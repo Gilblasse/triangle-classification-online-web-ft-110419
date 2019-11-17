@@ -8,9 +8,7 @@ class Triangle
   end
   
   def kind 
-    case 
-      when 
-    end
+    # All sides equal = Equilateral
   end
   
 end
