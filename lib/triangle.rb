@@ -8,7 +8,9 @@ class Triangle
   end
   
   def kind 
-    @side_a
+    case 
+      when 
+    end
   end
   
 end
