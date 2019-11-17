@@ -10,8 +10,11 @@ class Triangle
     check_equality = all_sides.each_with_object({}) do |v,h| 
                     		h[v] ||= 0 
                     		h[v] += 1
-                  	  end.values.max
-    
+                  	 end.values.max
+      
+    case check_equality
+      when 3
+    end
   end
   
 end
