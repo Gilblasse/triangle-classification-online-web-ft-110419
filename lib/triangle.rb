@@ -1,14 +1,11 @@
 class Triangle
-  attr_accessor :side_a, :side_b, :side_c
+  attr_accessor :all_sides 
   
   def initialize(side_a,side_b,side_c)
-    @side_a = side_a
-    @side_b = side_b
-    @side_c = side_c
+    @all_sides = [side_a,side_b,side_c]
   end
   
   def kind 
-    sides = 
     # All sides equal = :equilateral
     sides.each_with_object({}) do |v,h| 
   		h[v] ||= 0 
